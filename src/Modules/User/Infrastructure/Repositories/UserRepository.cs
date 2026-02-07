@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AppCoffee.src.Modules.User.Application.Interfaces;
-using AppCoffee.src.Modules.User.Domain.Entities;
+using CoffeeApp.src.Modules.User.Application.Interfaces;
+using CoffeeApp.src.Modules.User.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using AppCoffee.src.Shared.Context;
+using CoffeeApp.src.Shared.Context;
 
-namespace AppCoffee.src.Modules.User.Infrastructure.Repositories;
+namespace CoffeeApp.src.Modules.User.Infrastructure.Repositories;
 
 public class UserRepository : IUserRepository
 {
@@ -20,21 +20,21 @@ public class UserRepository : IUserRepository
 
     public async Task<Usuario?> GetByIdAsync(int id)
     {
-        return await _context.usuarios
-            .FirstOrDefaultAsync(u => u.Id == id);
+        return await _context.Usuarios
+            .FirstOrDefaultAsync(u => u.id == id);
     }
 
     public async Task<IEnumerable<Usuario?>> GetAllAsync() =>
-        await _context.usuarios.ToListAsync();
+        await _context.Usuarios.ToListAsync();
 
     public void Add(Usuario entity) =>
-        _context.usuarios.Add(entity);
+        _context.Usuarios.Add(entity);
 
     public void Remove(Usuario entity) =>
-        _context.usuarios.Remove(entity);
+        _context.Usuarios.Remove(entity);
 
     public void Update(Usuario entity) =>
-        _context.SaveChanges();
+         _context.Usuarios.Update(entity);
 
     public async Task SaveAsync() =>
     await _context.SaveChangesAsync();

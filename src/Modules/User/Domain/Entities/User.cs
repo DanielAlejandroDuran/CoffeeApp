@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
-namespace AppCoffee.src.Modules.User.Domain.Entities
+namespace CoffeeApp.src.Modules.User.Domain.Entities
 {
     public class Usuario
     {
-        public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
-        public DateTime accountcreation { get; set; }
-        public bool verification { get; set; }
-        public string Role { get; set; } = string.Empty;
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int id { get; set; }
+        public string nombre { get; set; } = string.Empty;
+        public string email { get; set; } = string.Empty;
+        public string password_hash { get; set; } = string.Empty;
+        public DateTime fecha_registro { get; set; }
+        public bool verificado { get; set; }
+        public string rol { get; set; } = string.Empty;
     }
 }

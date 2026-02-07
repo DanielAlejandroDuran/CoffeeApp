@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AppCoffee.src.Modules.User.Domain.Entities;
+using CoffeeApp.src.Modules.User.Domain.Entities;
 
-namespace AppCoffee.src.Modules.User.Application.Interfaces
+namespace CoffeeApp.src.Modules.User.Application.Interfaces
 {
     public interface IUserService
     {

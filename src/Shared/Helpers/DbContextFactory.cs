@@ -1,4 +1,4 @@
-using AppCoffee.src.Shared.Context;
+using CoffeeApp.src.Shared.Context;
 using CoffeeApp.src.Shared.Helpers;
 using Microsoft.EntityFrameworkCore; 
 using Microsoft.Extensions.Configuration;
